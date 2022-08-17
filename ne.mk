@@ -164,6 +164,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb.gadget@1.2.vendor
 
+# VNDK
+PRODUCT_PACKAGES += \
+    libutils-v32
+
+
 ## Inherit from the main common tree product makefile
 $(call inherit-product, device/amlogic/common/amlogic.mk)
 
