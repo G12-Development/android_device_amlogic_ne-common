@@ -6,11 +6,29 @@
 
 COMMON_PATH := device/amlogic/ne-common
 
+# A/B
+AB_OTA_UPDATER := true
+
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    odm \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor
+
+## BUILD_BROKEN_*
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 # GPU
 TARGET_AMLOGIC_GPU_ARCH ?= bifrost
 
 ## HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest_boot.xml
 
 ## Kernel
 BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.boot_devices=ffe07000.emmc use_uvm=1
@@ -39,9 +57,6 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 ## Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init-files/fstab.amlogic
-
-## Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 ## Vendor SPL
 VENDOR_SECURITY_PATCH := 2024-04-01
