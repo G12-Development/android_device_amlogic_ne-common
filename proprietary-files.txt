@@ -1,5 +1,6 @@
 ### All blobs from this list, unless pinned and noted as otherwise,
 ##  are from adt3-user 13 TTT1.220909.001.B7 9305992 release-keys.
+## vim1s blobs are for 5.4 kernel from Droidlogic/kvim1s/kvim1s:11/RD2A.211001.002/hlm10201558:userdebug/test-keys
 
 # ATV Specific
 product/etc/permissions/com.google.android.tv.dfuservice.xml
@@ -102,7 +103,7 @@ vendor/etc/init/android.hardware.dumpstate@1.1-service.droidlogic.rc
 # DVB
 vendor/lib/libam_adp.so
 
-# Graphics
+# Graphics - from vim1s
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service.rc
 vendor/etc/mesondisplay.cfg
@@ -121,13 +122,13 @@ vendor/bin/hw/android.hardware.health@2.1-service.droidlogic
 vendor/etc/init/android.hardware.health@2.1-service.droidlogic.rc
 vendor/lib/hw/android.hardware.health@2.0-impl-2.1.droidlogic.so
 
-# Kernel Modules
+# Kernel Modules - from vim1s
 vendor/lib/modules/amlogic_fbc_lib.ko
 
 # ICU
 vendor/lib/libicuuc_vendor.so
 
-# Init-files
+# Init-files - from vim1s
 vendor/etc/init/bluetooth.rc
 vendor/etc/init/dvb.rc
 vendor/etc/init/fs.rc
@@ -158,14 +159,14 @@ vendor/usr/keylayout/Vendor_7545_Product_0021.kl
 vendor/usr/keylayout/Vendor_7545_Product_0180.kl
 vendor/usr/keylayout/Vendor_7545_Product_0190.kl
 
-# Media (Hardware)
+# Media (Hardware) - from vim1s
 vendor/bin/DecInfo_test
 vendor/bin/esplayer
 vendor/lib/firmware/video/h264_enc.bin
 vendor/lib/firmware/video/video_ucode.bin
 vendor/lib/libamavutils.so
 
-# Media
+# Media - from vim1s
 vendor/lib/libmediahal_mediasync.so
 vendor/lib/libmediahal_passthrough.so
 vendor/lib/libmediahal_resman.so
@@ -173,7 +174,7 @@ vendor/lib/libmediahal_tsplayer.so
 vendor/lib/libmediahal_tunnelrenderer.so
 vendor/lib/libmediahal_videodec.so
 
-# Memtrack
+# Memtrack - from vim1s
 vendor/lib/hw/memtrack.amlogic.so
 
 # OEM Lock
@@ -181,7 +182,7 @@ vendor/bin/hw/android.hardware.oemlock@1.0-service.droidlogic
 vendor/etc/init/android.hardware.oemlock@1.0-service.droidlogic.rc
 vendor/etc/vintf/manifest/android.hardware.oemlock@1.0-service.droidlogic.xml
 
-# OMX
+# OMX - from vim1s
 odm/lib/libHwAudio_dcvdec.so
 odm/lib/libHwAudio_dtshd.so
 vendor/lib/libOmxAudio.so
@@ -206,6 +207,9 @@ vendor/etc/init/android.hardware.power-service.libperfmgr.rc
 vendor/etc/powerhint.json
 vendor/lib/libdisppower.so
 vendor/lib/libperfmgr.so
+
+# PQ-db - from vim1s
+odm_ext/etc/tvconfig/pq/pq.db:odm/etc/tvconfig/pq/pq.db
 
 # Recovery
 recovery/root/system/bin/systemcontrol_static
@@ -234,7 +238,6 @@ vendor/lib/libge2d.so
 
 # systemcontrol
 odm/etc/firmware/firmware.le
-odm/etc/tvconfig/pq/pq.db
 odm/etc/tvconfig/pq/pq_default.ini
 vendor/bin/hdcp_tx22
 vendor/bin/systemcontrol
