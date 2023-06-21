@@ -6,6 +6,10 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
+# Atrace
+PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service
+
 ## Attestation
 PRODUCT_COPY_FILES +=  \
     frameworks/native/data/etc/android.hardware.device_unique_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.device_unique_attestation.xml \
@@ -101,6 +105,10 @@ PRODUCT_PACKAGES += \
     media \
     optee-module
 
+## Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-V1-ndk_platform.vendor
+
 ## Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.security.keymint-V1-ndk_platform.vendor \
@@ -133,7 +141,7 @@ TARGET_AMLOGIC_SOC ?= s4
 
 ## Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-V2-ndk_platform.vendor
+    android.hardware.power-V1-ndk_platform.vendor
 
 ## Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -151,8 +159,8 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier \
-    android.hardware.boot@1.2 \
-    android.hardware.boot@1.2.vendor
+    android.hardware.boot@1.1 \
+    android.hardware.boot@1.1.vendor
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client

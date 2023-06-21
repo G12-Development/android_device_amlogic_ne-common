@@ -31,6 +31,10 @@ MALI_DRV_VERSION := r25p0
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest_boot.xml
 
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(COMMON_PATH)/device_matrix_product_amlogic.xml \
+    vendor/lineage/config/device_framework_matrix.xml
+
+
 ## Kernel
 BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.boot_devices=soc/fe08c000.mmc use_uvm=1
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
