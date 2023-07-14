@@ -287,6 +287,7 @@ vendor/lib/libomx_clock_utils_alt.so
 vendor/lib/libomx_framework_alt.so
 vendor/lib/libomx_timed_task_queue_alt.so
 vendor/lib/libomx_worker_peer_alt.so
+vendor/lib/libstagefright_soft_amsoftdec.so
 vendor/lib/libthreadworker_alt.so
 vendor/lib/libstagefrighthw.so
 
@@ -388,9 +389,10 @@ system_ext/lib/libSubtitleClient.so
 # playready
 vendor/lib/teetz/9a04f079-9840-4286-ab92-e65be0885f95.ta
 
-# TEE loader
+# TEEloader
 vendor/lib/libtee_load_video_fw.so
 vendor/lib/libteec.so
+vendor/lib/libsecmem.so
 vendor/bin/tee-supplicant
 vendor/bin/tee_hdcp
 vendor/bin/tee_key_inject
