@@ -67,11 +67,8 @@ function blob_fixup() {
         vendor/etc/init/tee-supplicant.rc)
              sed -i s#/vendor/lib/#/vendor/lib/modules/#g "${2}"
              ;;
-        vendor/bin/systemcontrol)
-             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-             ;;
-        vendor/bin/hdmicecd)
-             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+        odm/etc/tvconfig/pq/pq_default.ini)
+             sed -i s#/mnt/vendor/odm_ext/etc/tvconfig/pq/pq.db#/odm/etc/tvconfig/pq/pq.db#g "${2}"
              ;;
      esac
  }
