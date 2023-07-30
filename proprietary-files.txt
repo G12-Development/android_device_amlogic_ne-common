@@ -180,8 +180,11 @@ vendor/lib/libmediahal_tsplayer.so
 vendor/lib/libmediahal_tunnelrenderer.so
 vendor/lib/libmediahal_videodec.so
 
-# Memtrack - from vim1s
-vendor/lib/hw/memtrack.amlogic.so
+# Memtrack
+-vendor/etc/vintf/manifest/memtrack-amlogic.xml
+vendor/etc/init/memtrack-amlogic.rc
+vendor/bin/hw/android.hardware.memtrack-service.droidlogic
+vendor/lib/libmemtrack-amlogic.so
 
 # OEM Lock
 vendor/bin/hw/android.hardware.oemlock@1.0-service.droidlogic

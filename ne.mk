@@ -128,6 +128,10 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1-service
 endif
 
+# Memtrack
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack-V1-ndk_platform.vendor
+
 ## OEM Lock
 PRODUCT_PACKAGES += \
     android.hardware.oemlock@1.0.vendor
