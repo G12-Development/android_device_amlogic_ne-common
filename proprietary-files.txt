@@ -140,9 +140,10 @@ system_ext/lib/libvideotunnel.so
 vendor/lib/vendor.amlogic.display.meson_display_ipc@1.0.so
 
 # Dolby
-#odm/etc/ms12/libdolbyms12.so
-#vendor/bin/dolby_fw_dolbyms12
-#vendor/etc/init/dolby_fw_dolbyms12.rc
+odm/etc/ms12/libdolbyms12.so
+vendor/bin/dolby_fw_dolbyms12
+vendor/etc/init/dolby_fw_dolbyms12.rc
+vendor/lib/modules/aml_chcon.ko
 
 # Droidlogic
 -vendor/framework/droidlogic-tv.jar
