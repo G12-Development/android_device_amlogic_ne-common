@@ -1,6 +1,5 @@
 ### All blobs from this list, unless pinned and noted as otherwise,
 ##  are from adt3-user 13 TTT1.220909.001.B7 9305992 release-keys.
-## vim1s blobs are for 5.4 kernel from Droidlogic/kvim1s/kvim1s:11/RD2A.211001.002/hlm10201558:userdebug/test-keys
 
 # ATV Specific
 product/etc/permissions/com.google.android.tv.dfuservice.xml
@@ -57,7 +56,7 @@ vendor/etc/bluetooth/bt_vendor_usb.conf
 vendor/etc/init/android.hardware.bluetooth@1.0-service-droidlogic.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-droidlogic.so
 
-# Boot
+# Boot - from onn4k
 vendor/bin/hw/android.hardware.boot@1.2-service.droidlogic
 vendor/lib/hw/android.hardware.boot@1.0-impl-1.2.droidlogic.so
 vendor/etc/init/android.hardware.boot@1.2-service.droidlogic.rc
@@ -91,12 +90,6 @@ vendor/lib/libmeson_display_service.so
 vendor/lib/libvideotunnel.so
 vendor/lib/vendor.amlogic.display.meson_display_ipc@1.0.so
 
-# Dolby
-odm/etc/ms12/libdolbyms12.so
-vendor/bin/dolby_fw_dolbyms12
-vendor/etc/init/dolby_fw_dolbyms12.rc
-vendor/lib/modules/aml_chcon.ko
-
 # Droidlogic
 -vendor/framework/droidlogic.software.core.jar
 vendor/etc/permissions/droidlogic.software.core.xml
@@ -109,7 +102,8 @@ vendor/etc/init/android.hardware.dumpstate@1.1-service.droidlogic.rc
 # DVB
 vendor/lib/libam_adp.so
 
-# Graphics - from vim1s
+
+# Graphics - from onn4k
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service.rc
 vendor/etc/mesondisplay.cfg
@@ -118,6 +112,7 @@ vendor/lib/egl/libGLES_mali.so
 vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-arm.so
 vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-arm.so
 vendor/lib/libamgralloc_ext.so
+
 
 # HDMI CEC
 vendor/lib/hw/hdmi_cec.amlogic.so
@@ -128,13 +123,14 @@ vendor/bin/hw/android.hardware.health@2.1-service.droidlogic
 vendor/etc/init/android.hardware.health@2.1-service.droidlogic.rc
 vendor/lib/hw/android.hardware.health@2.0-impl-2.1.droidlogic.so
 
-# Kernel Modules - from vim1s
-vendor/lib/modules/amlogic_fbc_lib.ko
+# Kernel modules - from onn4k
+vendor_dlkm/lib/modules/aml_chcon.ko:vendor/lib/modules/amlogic_fbc_lib.ko
+vendor_dlkm/lib/modules/aml_chcon.ko:vendor/lib/modules/aml_chcon.ko
 
 # ICU
 vendor/lib/libicuuc_vendor.so
 
-# Init-files - from vim1s
+# Init-files - from onn4k
 vendor/etc/init/bluetooth.rc
 vendor/etc/init/dvb.rc
 vendor/etc/init/fs.rc
@@ -165,14 +161,14 @@ vendor/usr/keylayout/Vendor_7545_Product_0021.kl
 vendor/usr/keylayout/Vendor_7545_Product_0180.kl
 vendor/usr/keylayout/Vendor_7545_Product_0190.kl
 
-# Media (Hardware) - from vim1s
+# Media (Hardware) - from onn4k
 vendor/bin/DecInfo_test
 vendor/bin/esplayer
 vendor/lib/firmware/video/h264_enc.bin
 vendor/lib/firmware/video/video_ucode.bin
 vendor/lib/libamavutils.so
 
-# Media - from vim1s
+# Media - from onn4k
 vendor/lib/libmediahal_mediasync.so
 vendor/lib/libmediahal_passthrough.so
 vendor/lib/libmediahal_resman.so
@@ -180,23 +176,23 @@ vendor/lib/libmediahal_tsplayer.so
 vendor/lib/libmediahal_tunnelrenderer.so
 vendor/lib/libmediahal_videodec.so
 
-# Memtrack
+# Memtrack - from onn4k
 -vendor/etc/vintf/manifest/memtrack-amlogic.xml
 vendor/etc/init/memtrack-amlogic.rc
 vendor/bin/hw/android.hardware.memtrack-service.droidlogic
 vendor/lib/libmemtrack-amlogic.so
+
 
 # OEM Lock
 vendor/bin/hw/android.hardware.oemlock@1.0-service.droidlogic
 vendor/etc/init/android.hardware.oemlock@1.0-service.droidlogic.rc
 vendor/etc/vintf/manifest/android.hardware.oemlock@1.0-service.droidlogic.xml
 
-# OMX - from vim1s
-odm/lib/libHwAudio_dcvdec.so
-odm/lib/libHwAudio_dtshd.so
+# OMX - from onn4k
 vendor/lib/libOmxAudio.so
 vendor/lib/libOmxBase.so
 vendor/lib/libOmxCore.so
+vendor/lib/libOmxCoreSw.so
 vendor/lib/libOmxVideo.so
 vendor/lib/libdatachunkqueue_alt.so
 vendor/lib/libdsm.so
@@ -219,10 +215,7 @@ vendor/etc/powerhint.json
 vendor/lib/libdisppower.so
 vendor/lib/libperfmgr.so
 
-# PQ-db - from vim1s
-odm_ext/etc/tvconfig/pq/pq.db:odm/etc/tvconfig/pq/pq.db
-
-# Recovery
+# Recovery - from onn4k
 recovery/root/system/bin/systemcontrol_static
 recovery/root/sbin/mesondisplay.cfg
 recovery/root/system/lib/hw/android.hardware.fastboot@1.0-impl-amlogic.so
@@ -249,6 +242,7 @@ vendor/lib/libge2d.so
 
 # systemcontrol
 odm/etc/firmware/firmware.le
+odm/etc/tvconfig/pq/pq.db
 odm/etc/tvconfig/pq/pq_default.ini
 vendor/bin/hdcp_tx22
 vendor/bin/systemcontrol
@@ -261,38 +255,8 @@ vendor/lib/vendor.amlogic.hardware.systemcontrol@1.0.so
 vendor/lib/vendor.amlogic.hardware.systemcontrol@1.1.so
 vendor/lib/vendor.amlogic.hardware.tvserver@1.0.so
 
-# screencontrol
-vendor/etc/init/screencontrol.rc
-vendor/bin/screencontrol
--vendor/etc/vintf/manifest/vendor.amlogic.hardware.screencontrol@1.0.xml
-vendor/lib/libscreencontrol_jni.so
-vendor/lib/libscreencontrolclient.so
-vendor/lib/libscreencontrolservice.so
-vendor/lib/vendor.amlogic.hardware.screencontrol@1.0.so
-vendor/bin/screencatch
-vendor/bin/tspacktest
-vendor/bin/videomediaconvertortest
 
-# subtitleserver
-vendor/bin/hw/subtitleserver
--vendor/etc/vintf/manifest/vendor.amlogic.hardware.subtitleserver@1.0.xml
-vendor/lib/vendor.amlogic.hardware.subtitleserver@1.0.so
-system_ext/lib/vendor.amlogic.hardware.subtitleserver@1.0.so
-vendor/etc/init/subtitleserver.rc
-system_ext/lib/libsubtitlebinder.so
-vendor/lib/libsubtitlebinder.so
-vendor/lib/libsubtitlemanager_jni.so
-system_ext/lib/libsubtitlemanager_jni.so
-
-vendor/lib/libvendorfont.so
-vendor/lib/libSubtitleClient.so
-system_ext/lib/libSubtitleClient.so
-
-# TEE-tz
-# playready
-vendor/lib/teetz/9a04f079-9840-4286-ab92-e65be0885f95.ta
-
-# TEEloader
+# TEEloader - from onn4k
 vendor/lib/libtee_load_video_fw.so
 vendor/lib/libteec.so
 vendor/lib/libsecmem.so
@@ -301,7 +265,7 @@ vendor/bin/tee_preload_fw
 vendor/etc/init/tee-supplicant.rc
 vendor/etc/init/tee_preload_fw.rc
 
-# TEE-HDCP - from vim1s
+# TEE-HDCP - from onn4k
 vendor/bin/tee_hdcp
 vendor/bin/tee_key_inject
 vendor/etc/init/tee_hdcp.rc
