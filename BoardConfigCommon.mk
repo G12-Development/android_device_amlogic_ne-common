@@ -29,7 +29,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # GPU
 TARGET_AMLOGIC_GPU_ARCH := bifrost
 # use older gpu module to be compatible with android 11 5.4 blobs
-MALI_DRV_VERSION := r25p0
+MALI_DRV_VERSION := r32p1
 ## HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest_boot.xml
