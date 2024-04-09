@@ -1,14 +1,20 @@
 ## All blobs from this list, unless pinned and noted as otherwise,
-## are from adt3-user 13 TTT1.230205.001 9565391 release-keys.
+## are from onn_4k_gtv-user 12 SGZ1.221127.063.A1 9885170 release-keys.
 
 # Audio
+vendor/bin/hw/android.hardware.audio.service-droidlogic
+vendor/etc/init/android.hardware.audio.service-droidlogic.rc
 vendor/lib/hw/audio.primary.amlogic.so
 vendor/lib/libAmlAudioOutPort.so
 vendor/lib/libamadec.so
 vendor/lib/libamaudioutils.so
 vendor/lib/libamladecs.so
 vendor/lib/libamlaudiohal.7.0.so
+vendor/lib/libamlaudiohal@7.0.so
+vendor/lib/libamlaudiohal_deathhandler@7.0.so
 vendor/lib/libamlaudiorc.so
+vendor/lib/libamlmediautils@7.0.so
+vendor/lib/libamlmediautils@7.0.so
 vendor/lib/libamlparser.so
 vendor/lib/libamlresampler.so
 vendor/lib/libamlspeed.so
@@ -27,7 +33,6 @@ vendor/lib/soundfx/libavl.so
 vendor/lib/soundfx/libbalance.so
 vendor/lib/soundfx/libdbx.so
 vendor/lib/soundfx/libhpeqwrapper.so
-vendor/lib/soundfx/libms12dapwrapper.so
 vendor/lib/soundfx/libsrswrapper.so
 vendor/lib/soundfx/libtreblebasswrapper.so
 vendor/lib/soundfx/libvirtualsurround.so
@@ -44,28 +49,28 @@ vendor/lib/hw/android.hardware.bluetooth@1.0-impl-droidlogic.so
 
 # Boot
 vendor/bin/hw/android.hardware.boot@1.2-service.droidlogic
-vendor/lib/hw/android.hardware.boot@1.0-impl-1.2.droidlogic.so
 vendor/etc/init/android.hardware.boot@1.2-service.droidlogic.rc
 vendor/etc/vintf/manifest/android.hardware.boot@1.2.droidlogic.xml
+vendor/lib/hw/android.hardware.boot@1.0-impl-1.2.droidlogic.so
 
 # Camera
 vendor/lib/hw/camera.amlogic.so
-vendor/lib/libispaaa.so
 
 # Common
 vendor/bin/ddrtest.sh
+vendor/etc/permissions/android.hardware.hardware_keystore.amlogic.xml
+vendor/etc/permissions/android.software.cant_save_state.xml
 vendor/etc/lowmemorykiller.txt
 vendor/etc/lowmemorykiller_2G.txt
 vendor/etc/lowmemorykiller_512M.txt
-vendor/etc/permissions/android.software.cant_save_state.xml
 
 # Composer
 vendor/bin/hw/android.hardware.graphics.composer@2.4-service.droidlogic
 vendor/etc/init/android.hardware.graphics.composer@2.4-service.droidlogic.rc
 vendor/etc/vintf/manifest/android.hardware.graphics.composer@2.4-service.droidlogic.xml
+vendor/lib/hw/hwcomposer.amlogic.so
 vendor/lib/android.hardware.graphics.composer@2.1-resources-vendor.so
 vendor/lib/android.hardware.graphics.composer@2.2-resources-vendor.so
-vendor/lib/hw/hwcomposer.amlogic.so
 vendor/lib/libmeson_display_adapter_remote.so
 vendor/lib/libmeson_display_service.so
 vendor/lib/libvideotunnel.so
@@ -86,10 +91,11 @@ vendor/lib/libam_adp.so
 # Graphics
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service.rc
-vendor/lib/arm.graphics-V1-ndk_platform.so
-vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/hw/vulkan.amlogic.so
+vendor/etc/mesondisplay.cfg
+vendor/lib/egl/libGLES_mali.so
 vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-arm.so
 vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-arm.so
+vendor/lib/arm.graphics-V1-ndk_platform.so
 vendor/lib/libamgralloc_ext.so
 
 # HDMI CEC
@@ -100,9 +106,6 @@ vendor/bin/hw/android.hardware.health@2.1-service.droidlogic
 vendor/etc/init/android.hardware.health@2.1-service.droidlogic.rc
 vendor/etc/vintf/manifest/android.hardware.health@2.1-servcie.droidlogic.xml
 vendor/lib/hw/android.hardware.health@2.0-impl-2.1.droidlogic.so
-
-# Kernel Modules
-vendor/lib/modules/amlogic_fbc_lib.ko
 
 # ICU
 vendor/lib/libicuuc_vendor.so
@@ -115,7 +118,16 @@ vendor/etc/init/irblaster1.rc
 vendor/etc/init/power.rc
 vendor/etc/init/sysfs_permissions.rc
 
-# Media (Hardware)
+# Kernel modules
+vendor_dlkm/lib/modules/aml_chcon.ko:vendor/lib/modules/aml_chcon.ko|bb6497e73bffad7cb5300a722b9c83abd9cb60b2
+vendor_dlkm/lib/modules/amlogic_fbc_lib.ko:vendor/lib/modules/amlogic_fbc_lib.ko|bb6497e73bffad7cb5300a722b9c83abd9cb60b2
+
+# Lights
+vendor/bin/hw/lights
+vendor/etc/init/lights.rc
+vendor/etc/vintf/manifest/lights.xml
+
+# Media (Hardware) - from onn4k
 vendor/bin/DecInfo_test
 vendor/bin/esplayer
 vendor/lib/firmware/video/h264_enc.bin
@@ -131,14 +143,23 @@ vendor/lib/libmediahal_tunnelrenderer.so
 vendor/lib/libmediahal_videodec.so
 
 # Memtrack
-vendor/lib/hw/memtrack.amlogic.so
+vendor/bin/hw/android.hardware.memtrack-service.droidlogic
+vendor/etc/init/memtrack-amlogic.rc
+vendor/etc/vintf/manifest/memtrack-amlogic.xml
+vendor/lib/libmemtrack-amlogic.so
+
+# OEM Lock
+vendor/bin/hw/android.hardware.oemlock@1.0-service.droidlogic
+vendor/etc/init/android.hardware.oemlock@1.0-service.droidlogic.rc
+vendor/etc/vintf/manifest/android.hardware.oemlock@1.0-service.droidlogic.xml
 
 # OMX
-odm/lib/libHwAudio_dcvdec.so
-odm/lib/libHwAudio_dtshd.so
+#odm/lib/libHwAudio_dcvdec.so
+#odm/lib/libHwAudio_dtshd.so
 vendor/lib/libOmxAudio.so
 vendor/lib/libOmxBase.so
 vendor/lib/libOmxCore.so
+vendor/lib/libOmxCoreSw.so
 vendor/lib/libOmxVideo.so
 vendor/lib/libdatachunkqueue_alt.so
 vendor/lib/libdsm.so
@@ -149,22 +170,26 @@ vendor/lib/libomx_clock_utils_alt.so
 vendor/lib/libomx_framework_alt.so
 vendor/lib/libomx_timed_task_queue_alt.so
 vendor/lib/libomx_worker_peer_alt.so
+vendor/lib/libstagefright_soft_amsoftdec.so
 vendor/lib/libstagefrighthw.so
+vendor/lib/libthreadworker_alt.so
 vendor/lib/libthreadworker_alt.so
 
 # Power
 vendor/bin/hw/android.hardware.power.aidl-service.droidlogic
 vendor/etc/init/android.hardware.power-service.libperfmgr.rc
-vendor/etc/powerhint.json
 vendor/etc/vintf/manifest/android.hardware.power-service.xml
+vendor/etc/powerhint.json
+vendor/etc/resman.json
+vendor/etc/thermal_info_config.json
 vendor/lib/libdisppower.so
 vendor/lib/libperfmgr.so
 
-# Recovery
-recovery/root/system/bin/systemcontrol_static
-recovery/root/sbin/mesondisplay.cfg
-recovery/root/system/lib/hw/android.hardware.fastboot@1.0-impl-amlogic.so
-recovery/root/system/lib/hw/android.hardware.boot@1.0-impl-1.2.droidlogic.so
+# Recovery - Pinned for convienence
+recovery/root/sbin/mesondisplay.cfg|576fd1b78f5293aebe64a724a7589c84b49e2357
+recovery/root/system/bin/systemcontrol_static|731fc581c6c1a01a1216fe37fbe65069e270520d
+recovery/root/system/lib/hw/android.hardware.boot@1.0-impl-1.2.droidlogic.so|6e4c8933671b9ffba3fdca36fd4d984a961972eb
+recovery/root/system/lib/hw/android.hardware.fastboot@1.0-impl-amlogic.so|774d76a03fbc06dd92e946a82283521a8d008873
 
 # remotecfg
 vendor/bin/remotecfg
@@ -183,44 +208,66 @@ vendor/etc/seccomp_policy/mediaswcodec.policy
 
 # systemcontrol
 odm/etc/firmware/firmware.le
-odm/etc/tvconfig/pq/pq.db
-odm/etc/tvconfig/pq/pq_default.ini
-recovery/root/system/bin/systemcontrol_static|f4ad06b9486cbe9d4a67fa3c2b55a1e821183f8e
-vendor/bin/hdcp_tx22
 vendor/bin/systemcontrol
 vendor/etc/init/systemcontrol.rc
 vendor/lib/libfbc.so
 vendor/lib/libpqcontrol.so
+vendor/lib/libprovision.so
 vendor/lib/libsystemcontrolservice.so
 vendor/lib/vendor.amlogic.hardware.droidvold@1.0.so
 vendor/lib/vendor.amlogic.hardware.systemcontrol@1.0.so
 vendor/lib/vendor.amlogic.hardware.systemcontrol@1.1.so
 vendor/lib/vendor.amlogic.hardware.tvserver@1.0.so
 
-# TEE-supplicant - form vim1s
-vendor/lib/libtee_load_video_fw.so
-vendor/lib/libteec.so
+# screencontrol
+vendor/bin/screencatch
+vendor/bin/screencontrol
+vendor/bin/tspacktest
+vendor/bin/videomediaconvertortest
+vendor/etc/init/screencontrol.rc
+vendor/etc/vintf/manifest/vendor.amlogic.hardware.screencontrol@1.0.xml
+vendor/lib/libscreencontrol_jni.so
+vendor/lib/libscreencontrolclient.so
+vendor/lib/libscreencontrolservice.so
+vendor/lib/vendor.amlogic.hardware.screencontrol@1.0.so
+
+# subtitleserver
+system_ext/lib/libsubtitlebinder.so
+system_ext/lib/libsubtitlemanager_jni.so
+system_ext/lib/vendor.amlogic.hardware.subtitleserver@1.0.so
+vendor/bin/hw/subtitleserver
+vendor/etc/init/subtitleserver.rc
+vendor/etc/vintf/manifest/vendor.amlogic.hardware.subtitleserver@1.0.xml
+vendor/lib/vendor.amlogic.hardware.subtitleserver@1.0.so
+
+# TEEloader
 vendor/bin/tee-supplicant
 vendor/bin/tee_preload_fw
 vendor/etc/init/tee-supplicant.rc
 vendor/etc/init/tee_preload_fw.rc
+vendor/lib/libsecmem.so
+vendor/lib/libtee_load_video_fw.so
+vendor/lib/libteec.so
 
-# TEE-HDCP - from vim1s
-vendor/bin/tee_hdcp
-vendor/bin/tee_key_inject
-vendor/etc/init/tee_hdcp.rc
-vendor/etc/init/tee_key_inject.rc
+# TEE-HDCP - from Droidlogic/kvim1s/kvim1s:11/RD2A.211001.002/hlm10201558:userdebug/test-keys
+vendor/bin/tee_hdcp|68f2b3b2da388c17bd018763ef069dd3e36a9225
+vendor/bin/tee_key_inject|6203565e981cd1298c3f923b875fdc6a75c6cb8f
+vendor/etc/init/tee_hdcp.rc|b04450982731f4242fab5c877387f498effe3433
+vendor/etc/init/tee_key_inject.rc|c9f9b686806f700832b8a303802a213211512b6b
 
 # Thermal
 vendor/bin/hw/android.hardware.thermal@2.0-service.droidlogic
 vendor/etc/init/android.hardware.thermal@2.0-service.droidlogic.rc
-vendor/etc/thermal_info_config.json
 vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.droidlogic.xml
+vendor/etc/thermal_info_config.json
 
 # USB
 vendor/bin/hw/android.hardware.usb.gadget@1.2-service.droidlogic
 vendor/etc/init/android.hardware.usb.gadget@1.2-service.droidlogic.rc
 vendor/etc/vintf/manifest/android.hardware.usb.gadget@1.2-service.droidlogic.xml
+
+# Vulkan
+vendor/lib/hw/vulkan.amlogic.so
 
 # Widevine
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
