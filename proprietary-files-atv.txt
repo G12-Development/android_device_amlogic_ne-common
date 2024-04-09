@@ -1,5 +1,5 @@
 ## All blobs from this list, unless pinned and noted as otherwise,
-## are from adt3-user 13 TTT1.230205.001 9565391 release-keys.
+## are from ohm_gtv-userdebug-12-SC-eng.bin.ya.20230223.173800-test-keys.
 
 ## ATV specific
 product/etc/permissions/privapp-permissions-atv-product.xml
@@ -8,10 +8,5 @@ product/etc/permissions/split-permissions-google.xml
 product/etc/sysconfig/google-hiddenapi-package-whitelist.xml
 product/etc/sysconfig/google.xml:product/etc/sysconfig/google-lineage.xml
 product/etc/sysconfig/google_atv.xml
-product/priv-app/Adt3LauncherCustomization/Adt3LauncherCustomization.apk
 system/etc/permissions/privapp-permissions-google.xml
 system_ext/etc/permissions/privapp-permissions-google-se.xml
-
-## Bluetooth
-product/etc/permissions/privapp-permissions-deadpool.xml
-product/priv-app/DeadpoolService/DeadpoolService.apk

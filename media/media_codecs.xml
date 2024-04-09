@@ -78,85 +78,149 @@ Only the three quirks included above are recognized at this point:
 <MediaCodecs>
     <Decoders>
         <MediaCodec name="OMX.amlogic.hevc.decoder.awesome2" type="video/hevc" >
-            <Limit name="size" min="128x128" max="3840x2160" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="1944000" />
+            <Limit name="size" min="128x128" max="4096x4096" />
+            <Limit name="block-count" range="1-34560" /> <!-- max 4096x2160 -->
+            <Limit name="blocks-per-second" range="1-2073600" />
             <Limit name="bitrate" range="1-300000000" />
             <Feature name="adaptive-playback" />
             <Feature name="tunneled-playback" />
+            <Feature name="low-latency" />
             <Limit name="concurrent-instances" max="9" />
         </MediaCodec>
         <MediaCodec name="OMX.amlogic.hevc.decoder.awesome2.secure" type="video/hevc" >
-            <Limit name="size" min="128x128" max="3840x2160" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="1944000" />
+            <Limit name="size" min="128x128" max="4096x4096" />
+            <Limit name="block-count" range="1-34560" /> <!-- max 4096x2160 -->
+            <Limit name="blocks-per-second" range="1-2073600" />
             <Limit name="bitrate" range="1-300000000" />
             <Feature name="adaptive-playback" />
             <Feature name="secure-playback" required="true" />
             <Feature name="tunneled-playback" />
-	    <Limit name="concurrent-instances" max="2" />
+            <Feature name="low-latency" />
+            <Limit name="concurrent-instances" max="2" />
         </MediaCodec>
         <MediaCodec name="OMX.amlogic.avc.decoder.awesome2" type="video/avc" >
-            <Limit name="size" min="64x64" max="3840x2160" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="972000" />
+            <Limit name="size" min="64x64" max="4096x4096" />
+            <Limit name="block-count" range="1-34560" /> <!-- max 4096x2160 -->
+            <Limit name="blocks-per-second" range="1-1036800" />
             <Limit name="bitrate" range="1-300000000" />
             <Feature name="adaptive-playback" />
             <Feature name="tunneled-playback" />
+            <Feature name="low-latency" />
             <Limit name="concurrent-instances" max="9" />
         </MediaCodec>
         <MediaCodec name="OMX.amlogic.avc.decoder.awesome2.secure" type="video/avc" >
-            <Limit name="size" min="64x64" max="3840x2160" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="972000" />
+            <Limit name="size" min="64x64" max="4096x4096" />
+            <Limit name="block-count" range="1-34560" /> <!-- max 4096x2160 -->
+            <Limit name="blocks-per-second" range="1-1036800" />
             <Limit name="bitrate" range="1-300000000" />
             <Feature name="adaptive-playback" />
             <Feature name="tunneled-playback" />
+            <Feature name="low-latency" />
             <Feature name="secure-playback" required="true" />
-	    <Limit name="concurrent-instances" max="2" />
+            <Limit name="concurrent-instances" max="2" />
         </MediaCodec>
-        <MediaCodec name="OMX.amlogic.mpeg4.decoder.awesome2" type="video/mp4v-es" >
-            <Limit name="size" min="64x64" max="1920x1088" />
+        <MediaCodec name="OMX.amlogic.avc.decoder.awesome2.hdcp.secure" type="video/avc" >
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" min="1" max="972000" />
+            <Limit name="size" min="64x64" max="1920x1920" />
+            <Limit name="block-count" range="1-8160" /> <!-- max 1920x1080 -->
+            <Limit name="blocks-per-second" min="1" max="489600" />
+            <Limit name="bitrate" range="1-300000000" />
+            <Feature name="adaptive-playback" />
+            <Feature name="low-latency" />
+            <Feature name="secure-playback" required="true" />
+            <Limit name="concurrent-instances" max="1" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.mpeg4.decoder.awesome2" type="video/mp4v-es" >
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="size" min="64x64" max="1920x1920" />
+            <Limit name="block-count" range="1-8160" /> <!-- max 1920x1088 -->
+            <Limit name="blocks-per-second" min="1" max="489600" />
             <Limit name="bitrate" range="1-300000000" />
             <Feature name="adaptive-playback" />
             <Limit name="concurrent-instances" max="9" />
         </MediaCodec>
         <MediaCodec name="OMX.amlogic.mpeg2.decoder.awesome2" type="video/mpeg2" >
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="size" min="64x64" max="1920x1920" />
+            <Limit name="block-count" range="1-8160" /> <!-- max 1920x1088 -->
+            <Limit name="blocks-per-second" min="1" max="489600" />
+            <Limit name="bitrate" range="1-300000000" />
+            <Feature name="adaptive-playback" />
+            <Feature name="tunneled-playback" />
+            <Limit name="concurrent-instances" max="9" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.mpeg2.decoder.awesome2.secure" type="video/mpeg2" >
             <Limit name="size" min="64x64" max="1920x1088" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
             <Limit name="blocks-per-second" min="1" max="972000" />
             <Limit name="bitrate" range="1-300000000" />
             <Feature name="adaptive-playback" />
-            <Limit name="concurrent-instances" max="9" />
+            <Feature name="tunneled-playback" />
+            <Feature name="low-latency" />
+            <Feature name="secure-playback" required="true" />
+            <Limit name="concurrent-instances" max="2" />
         </MediaCodec>
         <MediaCodec name="OMX.amlogic.vp9.decoder.awesome2" type="video/x-vnd.on2.vp9" rank="100" >
-            <Limit name="size" min="64x64" max="3840x2160" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
+            <Limit name="size" min="64x64" max="4096x4096" />
+            <Limit name="block-count" range="1-34816" /> <!-- max 4096x2176 -->
+            <Limit name="blocks-per-second" range="1-2304960" />
+            <Limit name="bitrate" range="1-300000000" />
+            <Feature name="adaptive-playback" />
+            <Feature name="tunneled-playback" />
+            <Feature name="low-latency" />
+            <Limit name="concurrent-instances" max="9" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.vp9.decoder.awesome2.secure" type="video/x-vnd.on2.vp9" rank="100" >
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="size" min="64x64" max="4096x4096" />
+            <Limit name="block-count" range="1-34816" /> <!-- max 4096x2176 -->
+            <Limit name="blocks-per-second" range="1-2304960" />
+            <Limit name="bitrate" range="1-300000000" />
+            <Feature name="adaptive-playback" />
+            <Feature name="secure-playback" required="true" />
+            <Feature name="tunneled-playback" />
+            <Feature name="low-latency" />
+            <Limit name="concurrent-instances" max="2" />
+        </MediaCodec>
+        <MediaCodec name="OMX.amlogic.av1.decoder.awesome2" type="video/av01" >
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="size" min="64x64" max="3840x3840" />
+            <Limit name="block-count" range="1-32400" /> <!-- max 3840x2160 -->
             <Limit name="blocks-per-second" min="1" max="1944000" />
             <Limit name="bitrate" range="1-300000000" />
             <Feature name="adaptive-playback" />
             <Feature name="tunneled-playback" />
-	    <Limit name="concurrent-instances" max="9" />
+            <Feature name="low-latency" />
+            <Limit name="concurrent-instances" max="9" />
         </MediaCodec>
-        <MediaCodec name="OMX.amlogic.vp9.decoder.awesome2.secure" type="video/x-vnd.on2.vp9" rank="100" >
-            <Limit name="size" min="64x64" max="3840x2160" />
+        <MediaCodec name="OMX.amlogic.av1.decoder.awesome2.secure" type="video/av01" >
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
+            <Limit name="size" min="64x64" max="3840x3840" />
+            <Limit name="block-count" range="1-32400" /> <!-- max 3840x2160 -->
             <Limit name="blocks-per-second" min="1" max="1944000" />
             <Limit name="bitrate" range="1-300000000" />
             <Feature name="adaptive-playback" />
             <Feature name="secure-playback" required="true" />
             <Feature name="tunneled-playback" />
-	    <Limit name="concurrent-instances" max="2" />
+            <Feature name="low-latency" />
+            <Limit name="concurrent-instances" max="2" />
         </MediaCodec>
         <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp" />
         <MediaCodec name="OMX.google.amrwb.decoder" type="audio/amr-wb" />
@@ -169,12 +233,9 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.alac.decoder" type="audio/alac" />
         <MediaCodec name="OMX.google.ape.decoder" type="audio/ape" />
         <MediaCodec name="OMX.google.raw.decoder" type="audio/raw" />
-        <!--
-        <MediaCodec name="OMX.amlogic.audio.decoder.ac3" type="audio/ac3" />
-        <MediaCodec name="OMX.amlogic.audio.decoder.eac3" type="audio/eac3" />
-        <MediaCodec name="OMX.amlogic.audio.decoder.dtshd" type="audio/dtshd" />
-        -->
-        <MediaCodec name="OMX.google.opus.decoder" type="audio/opus">
+	<MediaCodec name="OMX.amlogic.audio.decoder.ac3" type="audio/ac3" />
+	<MediaCodec name="OMX.amlogic.audio.decoder.eac3" type="audio/eac3" />
+	<MediaCodec name="OMX.google.opus.decoder" type="audio/opus">
             <Limit name="channel-count" max="8" />
             <Limit name="sample-rate" ranges="48000" />
             <Limit name="bitrate" range="6000-510000" />
