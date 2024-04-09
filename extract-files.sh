@@ -63,7 +63,7 @@ if [ -z "${SRC}" ]; then
 fi
 
 function blob_fixup() {
-    case "${1}" in
+     case "${1}" in
         vendor/etc/init/fs.rc)
              sed -i '/media 0770 media_rw media_rw/d' "${2}"
              sed -i '/setprop ro.crypto.fuse_sdcard true/d' "${2}"
@@ -74,8 +74,8 @@ function blob_fixup() {
         vendor/lib/hw/camera.amlogic.so|vendor/lib/hw/hwcomposer.amlogic.so|vendor/lib/libOmxCore.so)
             grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             ;;
-    esac
-}
+     esac
+ }
 
 if [ -z "${ONLY_FIRMWARE}" ] && [ -z "${ONLY_TARGET}" ]; then
     # Initialize the helper for common device
