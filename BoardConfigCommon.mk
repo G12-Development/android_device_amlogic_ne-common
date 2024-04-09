@@ -80,6 +80,7 @@ BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 20000000
 endif
 
 ## Properties
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
@@ -90,7 +91,7 @@ TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 ## Vendor SPL
-VENDOR_SECURITY_PATCH := 2023-02-01
+VENDOR_SECURITY_PATCH := 2023-03-01
 
 ## Include the main common tree BoardConfig makefile
 include device/amlogic/common/BoardConfigAmlogic.mk

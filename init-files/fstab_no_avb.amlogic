@@ -8,8 +8,11 @@ system_ext                                              /system_ext             
 vendor                                                  /vendor                           ext4    ro,barrier=1                                         wait,slotselect,logical,first_stage_mount
 product                                                 /product                          ext4    ro,barrier=1                                         wait,slotselect,logical,first_stage_mount
 odm                                                     /odm                              ext4    ro,barrier=1                                         wait,slotselect,logical,first_stage_mount
-/dev/block/by-name/oem                                  /oem                              ext4    ro,barrier=1                                         wait,slotselect,first_stage_mount
-/dev/block/by-name/metadata                             /metadata                         ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,formattable,first_stage_mount
+odm_dlkm                                                /odm_dlkm                         ext4    noatime,ro,errors=panic                              wait,logical,first_stage_mount,slotselect,avb
+vendor_dlkm                                             /vendor_dlkm                      ext4    noatime,ro,errors=panic                              wait,logical,first_stage_mount,slotselect,avb
+
+/dev/block/by-name/oem                                  /oem                              ext4    ro,barrier=1                                                        wait,slotselect,first_stage_mount
+/dev/block/by-name/metadata                             /metadata                         ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic       wait,check,formattable,first_stage_mount
 /dev/block/by-name/odm_ext                              /mnt/vendor/odm_ext               ext4    ro,noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    wait,check,slotselect,first_stage_mount
 
 /dev/block/userdata                                     /data                             ext4    noatime,nosuid,nodev,nodelalloc,nomblk_io_submit,errors=panic    latemount,wait,check,fileencryption=aes-256-xts,keydirectory=/metadata/vold/metadata_encryption,quota,formattable,reservedsize=32M,checkpoint=block
@@ -17,8 +20,8 @@ odm                                                     /odm                    
 /dev/block/factory                                      /mnt/vendor/factory               vfat    noatime,nodiratime,nosuid,noexec,dmask=0022                      wait,check
 /dev/block/platform/soc/fe08c000.mmc/by-name/misc       /misc                             emmc    defaults                                                         defaults
 # Add for zram. zramsize can be in numeric (byte) , in percent
-/dev/block/zram0                                        none                              swap    defaults                                                         wait,zramsize=50%
-/dev/block/loop                                         auto                              loop    defaults                                             voldmanaged=loop:auto
-/devices/*.sd*/*/block/mmcblk*                          auto                              auto    defaults                                             voldmanaged=sdcard1:auto,encryptable=userdata
-/devices/*/xhci-hcd.*.auto/usb?/*/host*/target*/block/sd*  auto             auto      defaults                       voldmanaged=usb:auto,encryptable=userdata
+/dev/block/zram0                                        none                              swap    defaults               wait,zramsize=50%
+/dev/block/loop                                         auto                              loop    defaults               voldmanaged=loop:auto
+/devices/*.sd*/*/block/mmcblk*                          auto                              auto    defaults               voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/*/xhci-hcd.*.auto/usb?/*/host*/target*/block/sd*      auto             auto      defaults                       voldmanaged=usb:auto,encryptable=userdata
 /devices/*dwc3/xhci-hcd.*.auto/usb?/*/host*/target*/block/sr*  auto             auto      defaults                       voldmanaged=sr0:auto,encryptable=userdata

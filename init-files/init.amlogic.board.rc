@@ -12,20 +12,15 @@ on boot
     write /sys/module/amvdec_mh264/parameters/reorder_dpb_size_margin 9
     write /sys/module/amvdec_h265/parameters/dynamic_buf_num_margin 9
     write /sys/module/amvdec_vp9/parameters/max_buf_num 12
-    chmod 0666 sys/class/leds/red_led/brightness
-    chmod 0666 sys/class/leds/red_led/trigger
-    chmod 0666 sys/class/leds/white_led/brightness
-    chmod 0666 sys/class/leds/white_led/trigger
+    write /proc/sys/vm/watermark_scale_factor 200
 
 on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
-    write /sys/class/leds/white_led/trigger "none"
-    write /sys/class/leds/white_led/brightness "1"
 
-    # Add restrictions for background apps on four cores CPU
-    write /dev/cpuset/top-app/cpus 0-3
-    write /dev/cpuset/foreground/cpus 0-1
-    write /dev/cpuset/background/cpus 0
-    write /dev/cpuset/system-background/cpus 0-1
-    write /dev/cpuset/restricted/cpus 0-1
+on property:vendor.netflix.state=fg
+    write /sys/class/codec_mm/config "codec_mm.default_tvp_pool_size_0=97517568"
+    write /sys/class/codec_mm/tvp_enable 1
 
+on property:vendor.netflix.state=bg
+   write /sys/class/codec_mm/tvp_enable 0
+   write /sys/class/codec_mm/config "codec_mm.default_tvp_pool_size_0=0"

@@ -1,5 +1,5 @@
 ## All blobs from this list, unless pinned and noted as otherwise,
-## are from onn_4k_gtv-user 12 SGZ1.221127.063.A1 9885170 release-keys.
+## are from ohm_gtv-userdebug-12-SC-eng.bin.ya.20230223.173800-test-keys.
 
 # Audio
 vendor/bin/hw/android.hardware.audio.service-droidlogic
@@ -104,7 +104,7 @@ vendor/lib/hw/hdmi_cec.amlogic.so
 # Health
 vendor/bin/hw/android.hardware.health@2.1-service.droidlogic
 vendor/etc/init/android.hardware.health@2.1-service.droidlogic.rc
-vendor/etc/vintf/manifest/android.hardware.health@2.1-servcie.droidlogic.xml
+vendor/etc/vintf/manifest/android.hardware.health@2.1-service.droidlogic.xml
 vendor/lib/hw/android.hardware.health@2.0-impl-2.1.droidlogic.so
 
 # ICU
@@ -118,19 +118,18 @@ vendor/etc/init/irblaster1.rc
 vendor/etc/init/power.rc
 vendor/etc/init/sysfs_permissions.rc
 
-# Kernel modules
-vendor_dlkm/lib/modules/aml_chcon.ko:vendor/lib/modules/aml_chcon.ko|bb6497e73bffad7cb5300a722b9c83abd9cb60b2
-vendor_dlkm/lib/modules/amlogic_fbc_lib.ko:vendor/lib/modules/amlogic_fbc_lib.ko|bb6497e73bffad7cb5300a722b9c83abd9cb60b2
+# Kernel modules - Pinned for convienence
+vendor_dlkm/lib/modules/aml_chcon.ko:vendor/lib/modules/aml_chcon.ko|82f4190485c9a030ff8767939876035ed9207001
+vendor_dlkm/lib/modules/amlogic_fbc_lib.ko:vendor/lib/modules/amlogic_fbc_lib.ko|572a73fce5a586d4e02231c8d01b9ff2baac941a
 
 # Lights
 vendor/bin/hw/lights
 vendor/etc/init/lights.rc
 vendor/etc/vintf/manifest/lights.xml
 
-# Media (Hardware) - from onn4k
+# Media (Hardware)
 vendor/bin/DecInfo_test
 vendor/bin/esplayer
-vendor/lib/firmware/video/h264_enc.bin
 vendor/lib/firmware/video/video_ucode.bin
 vendor/lib/libamavutils.so
 
@@ -154,12 +153,11 @@ vendor/etc/init/android.hardware.oemlock@1.0-service.droidlogic.rc
 vendor/etc/vintf/manifest/android.hardware.oemlock@1.0-service.droidlogic.xml
 
 # OMX
-#odm/lib/libHwAudio_dcvdec.so
-#odm/lib/libHwAudio_dtshd.so
+odm/lib/libHwAudio_dcvdec.so
+odm/lib/libHwAudio_dtshd.so
 vendor/lib/libOmxAudio.so
 vendor/lib/libOmxBase.so
 vendor/lib/libOmxCore.so
-vendor/lib/libOmxCoreSw.so
 vendor/lib/libOmxVideo.so
 vendor/lib/libdatachunkqueue_alt.so
 vendor/lib/libdsm.so
@@ -170,7 +168,6 @@ vendor/lib/libomx_clock_utils_alt.so
 vendor/lib/libomx_framework_alt.so
 vendor/lib/libomx_timed_task_queue_alt.so
 vendor/lib/libomx_worker_peer_alt.so
-vendor/lib/libstagefright_soft_amsoftdec.so
 vendor/lib/libstagefrighthw.so
 vendor/lib/libthreadworker_alt.so
 vendor/lib/libthreadworker_alt.so
@@ -186,10 +183,9 @@ vendor/lib/libdisppower.so
 vendor/lib/libperfmgr.so
 
 # Recovery - Pinned for convienence
-recovery/root/sbin/mesondisplay.cfg|576fd1b78f5293aebe64a724a7589c84b49e2357
-recovery/root/system/bin/systemcontrol_static|731fc581c6c1a01a1216fe37fbe65069e270520d
-recovery/root/system/lib/hw/android.hardware.boot@1.0-impl-1.2.droidlogic.so|6e4c8933671b9ffba3fdca36fd4d984a961972eb
-recovery/root/system/lib/hw/android.hardware.fastboot@1.0-impl-amlogic.so|774d76a03fbc06dd92e946a82283521a8d008873
+recovery/root/system/bin/systemcontrol_static|94a0472d834e00313070ca5e2ce8266bca2c93e7
+recovery/root/system/lib/hw/android.hardware.boot@1.0-impl-1.2.droidlogic.so|1940ea8791fd365cfc5cd45cc3d94ce2ac5e79ed
+recovery/root/system/lib/hw/android.hardware.fastboot@1.0-impl-amlogic.so|b23b5ee762944abff5295b070ac9deb81dee62c2
 
 # remotecfg
 vendor/bin/remotecfg
@@ -249,11 +245,11 @@ vendor/lib/libsecmem.so
 vendor/lib/libtee_load_video_fw.so
 vendor/lib/libteec.so
 
-# TEE-HDCP - from Droidlogic/kvim1s/kvim1s:11/RD2A.211001.002/hlm10201558:userdebug/test-keys
-vendor/bin/tee_hdcp|68f2b3b2da388c17bd018763ef069dd3e36a9225
-vendor/bin/tee_key_inject|6203565e981cd1298c3f923b875fdc6a75c6cb8f
-vendor/etc/init/tee_hdcp.rc|b04450982731f4242fab5c877387f498effe3433
-vendor/etc/init/tee_key_inject.rc|c9f9b686806f700832b8a303802a213211512b6b
+# TEE-HDCP
+vendor/bin/tee_hdcp
+vendor/bin/tee_key_inject
+vendor/etc/init/tee_hdcp.rc
+vendor/etc/init/tee_key_inject.rc
 
 # Thermal
 vendor/bin/hw/android.hardware.thermal@2.0-service.droidlogic

@@ -63,11 +63,6 @@ service remotecfg2 /sbin/remotecfg -c /sbin/remote.cfg -t /sbin/remote.tab2 -d
     oneshot
     seclabel u:r:recovery:s0
 
-service systemcontrol /bin/systemcontrol_static /sbin/mesondisplay.cfg
-    oneshot
-    seclabel u:r:recovery:s0
-
-
 on property:sys.usb.config=none && property:sys.usb.configfs=1
     setprop sys.usb.ffs.ready 0
 

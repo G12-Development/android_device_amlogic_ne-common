@@ -1,2 +1,6 @@
+## Bluetooth
+persist.bluetooth.btsnoopsize=0xffff
+persist.bluetooth.showdeviceswithoutnames=false
+
 ## Filesystem
 fs_mgr.overlayfs.prefer_cache_backing_storage=true
