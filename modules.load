@@ -22,6 +22,8 @@ leds_state.ko
 meson-clk-debug.ko
 meson-clk-measure.ko
 meson-cpufreq.ko
+mdio_mux.ko
+aml_mdio_g12a.ko
 meson-gxl.ko
 meson_gxbb_wdt.ko
 meson_ir.ko
@@ -36,3 +38,4 @@ snd-usb-audio.ko
 snd-usbmidi-lib.ko
 snd_soc_notify.ko
 aml_spicc.ko
+thermal.ko
