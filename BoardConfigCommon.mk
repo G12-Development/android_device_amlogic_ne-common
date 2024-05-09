@@ -33,6 +33,8 @@ TARGET_AMLOGIC_GPU_ARCH := bifrost
 ## HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+
 ## Kernel
 BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.boot_devices=soc/fe08c000.mmc use_uvm=1
 TARGET_KERNEL_CONFIG := lineage_kvim1s_defconfig

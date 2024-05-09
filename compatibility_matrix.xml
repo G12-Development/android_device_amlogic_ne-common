@@ -1,0 +1,38 @@
+<!--
+    Input:
+        device_matrix_product_amlogic.xml
+-->
+<compatibility-matrix version="4.0" type="framework">
+    <hal format="hidl" optional="false">
+        <name>vendor.amlogic.display.meson_display_ipc</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMesonDisplayIPC</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.amlogic.hardware.screencontrol</name>
+        <version>1.0</version>
+        <interface>
+            <name>IScreenControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.amlogic.hardware.subtitleserver</name>
+        <version>1.0</version>
+        <interface>
+            <name>ISubtitleServer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.amlogic.hardware.systemcontrol</name>
+        <version>1.1</version>
+        <interface>
+            <name>ISystemControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>
