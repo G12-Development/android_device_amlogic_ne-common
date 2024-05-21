@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_PATH := device/amlogic/g12-common
+COMMON_PATH := device/amlogic/ne-common
 
 # GPU
 TARGET_AMLOGIC_GPU_ARCH ?= bifrost
@@ -58,4 +58,4 @@ VENDOR_SECURITY_PATCH := 2023-02-01
 include device/amlogic/common/BoardConfigAmlogic.mk
 
 ## Include the common proprietary BoardConfig makefile
-include vendor/amlogic/g12-common/BoardConfigVendor.mk
+include vendor/amlogic/ne-common/BoardConfigVendor.mk
