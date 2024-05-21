@@ -40,7 +40,7 @@ TARGET_KERNEL_CONFIG := lineage_kvim1s_defconfig
 TARGET_KERNEL_SOURCE := kernel/amlogic/linux-5.4
 
 ifeq ($(WITH_CONSOLE),true)
-BOARD_KERNEL_CMDLINE += console=ttyS0,115200 no_console_suspend ignore_loglevel
+BOARD_KERNEL_CMDLINE += console=ttyS0,921600 no_console_suspend ignore_loglevel
 endif
 
 ## Kernel modules
