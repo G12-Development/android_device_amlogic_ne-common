@@ -39,7 +39,7 @@ BOARD_KERNEL_CMDLINE := androidboot.dynamic_partitions=true androidboot.boot_dev
 TARGET_KERNEL_SOURCE := kernel/amlogic/linux-5.4
 
 ifeq ($(WITH_CONSOLE),true)
-BOARD_KERNEL_CMDLINE += console=ttyS0,921600 no_console_suspend
+BOARD_KERNEL_CMDLINE += console=ttyS0,921600 no_console_suspend ignore_loglevel
 endif
 
 # Kernel modules
